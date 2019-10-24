@@ -1,0 +1,36 @@
+{
+  "name": "vj-travel-assistance",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "html-webpack-plugin": "^3.2.0",
+    "webpack-dev-server": "^3.9.0"
+  },
+  "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.2.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^4.13.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
+    "start": "webpack-dev-server --open",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Martichka9/vj-travel-assistance.git"
+  },
+  "author": "Martichka9",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Martichka9/vj-travel-assistance/issues"
+  },
+  "homepage": "https://github.com/Martichka9/vj-travel-assistance#readme"
+}
