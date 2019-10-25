@@ -1,10 +1,6 @@
 import './styles/styles.scss';
+import './imgs/needpix_com_edited_image.png';
 
-function component() {
-  const element = document.createElement('div');
-  element.innerHTML = "halloo!!"
-
-  return element;
+export default function defFn (){
+    
 }
-
-document.body.appendChild(component());

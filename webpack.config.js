@@ -18,8 +18,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
       new HtmlWebpackPlugin({
         title: 'Development',
         filename: 'index.html',
-        template: './src/index.html',
-        inject: 'body',
+        template: './src/index.html'
       }),
       new MiniCssExtractPlugin({
         filename: isDevelopment ? '[name].css' : '[name].[hash].css',
@@ -35,14 +34,14 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
                 {
                     loader: 'css-loader',
                     options: {
-                    modules: true,
-                    sourceMap: isDevelopment
+                      modules: true,
+                      sourceMap: isDevelopment
                     }
                 },
                 {
                     loader: 'sass-loader',
                     options: {
-                    sourceMap: isDevelopment
+                      sourceMap: isDevelopment
                     }
                 }
                 ]
@@ -51,20 +50,31 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
                 test: /\.s(a|c)ss$/,
                 exclude: /\.module.(s(a|c)ss)$/,
                 loader: [
-                isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
-                'css-loader',
-                {
-                    loader: 'sass-loader',
-                    options: {
-                    sourceMap: isDevelopment
-                    }
-                }
+                  isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
+                  'css-loader',
+                  {
+                      loader: 'sass-loader',
+                      options: {
+                        sourceMap: isDevelopment
+                      }
+                  }
                 ]
-            }
+            },
+            {
+              test: /\.(png|svg|jpg|gif)$/,
+              use: [{
+                  loader: 'file-loader',
+                  options: {
+                    sourceMap: isDevelopment,
+                    name: '[name].[ext]',
+                    outputPath: 'imgs/'
+                  },
+                }],
+            },
         ]
       },
-      resolve: {
-        extensions: ['.js', '.jsx', '.scss']
+    resolve: {
+      extensions: ['.js', '.jsx', '.scss']
     },
     output: {
       filename: '[name].bundle.js',
