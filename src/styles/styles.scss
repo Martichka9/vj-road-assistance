@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700&display=swap&subset=cyrillic');
+
 $fullLength: 100%;
 $maxWidth : 1024px;
 $displayFlex: flex;
@@ -20,8 +22,9 @@ body {
   background-attachment: fixed;
   background-position: $centerAlignment;
   background-size: cover;
+  font-family: 'Roboto Condensed', sans-serif;
   color: white;
-  text-shadow: 1px 1px 13px #080669;
+  text-shadow: 1px 1px 3px #080669;
 
   #wrapper {
     width: $fullLength;
@@ -31,38 +34,62 @@ body {
     #header {
       height: 100px;
       background-color: rgba(92,138,187,0.5);
-      display: $displayFlex;
-      flex-flow: row-reverse;
-      justify-content: space-around;
-      align-items: $centerAlignment;
 
-      #cName {
-        width: 140px;
-        padding: 1% 0;
-        box-sizing: border-box;
-        text-align: $centerAlignment;
-      }
-
-      #icon {
-        height: 75%;
-      }
-
-      ul {
+      #container {
+        margin: 0 auto;
         display: $displayFlex;
-        list-style-type: none;
-        flex-wrap: wrap;
+        flex-flow: row-reverse;
+        justify-content: space-around;
+        align-items: $centerAlignment;
+        width: 85%;
+        max-width: $maxWidth;
+        height: $fullLength;
 
-        .menuItem {
-          width: 100px;
+        #cName {
+          width: 140px;
+          padding: 1% 0;
+          box-sizing: border-box;
           text-align: $centerAlignment;
+        }
+        #menuIcon {
+          height: $fullLength;
 
-          a{
-            display: block;
+          #icon {
+            height: $fullLength;
+          }
+          i.fas {
+            display: inline-block;
             height: 100%;
-            padding: 40% 0;
-            box-sizing: border-box;
+            position: absolute;
+            top: 45px;
+          }
+          i.fa-chevron-down {display: none;
+          }
+          i.fa-chevron-right {display: none;
           }
         }
+  
+        #menuIcon:hover {
+          cursor: pointer;
+        }
+        #mainMenu {
+          display: $displayFlex;
+          list-style-type: none;
+          flex-wrap: wrap;
+  
+          .menuItem {
+            width: 100px;
+            text-align: $centerAlignment;
+  
+            a{
+              display: block;
+              height: 100%;
+              padding: 40% 0;
+              box-sizing: border-box;
+            }
+          }
+        }
+
       }
     }
 
@@ -72,6 +99,7 @@ body {
       max-width: 1024px;
       margin: 30px auto;
 
+      //All main sections
       .section {
         display: $displayFlex;
         flex-wrap: wrap;
@@ -80,13 +108,12 @@ body {
         text-align: $centerAlignment;
         min-height: 350px;
         align-items: $centerAlignment;
-        margin: 30px 0;
+        margin: 70px 0;
         justify-content: center;
 
         .article{
           line-height: 30px;
           padding: 30px 45px;
-          //box-sizing: border-box;
 
           #info {
             margin: 15px 0 30px;
@@ -103,6 +130,7 @@ body {
         }
       }
 
+      //Services custom styles
       #services {
         .service {
           width: 170px;
@@ -117,22 +145,28 @@ body {
         }
       }
 
+      //Contacts custom styles
       .contactInfo{
         display: flex;
         flex-wrap: wrap;
+        align-items: inherit;
         
         .contacts {
           display: block;
-          height: 450px;
+          width: 450px;
           text-align: left;
-          width: 39%;
-          max-width: 500px;
           padding: 30px 0 !important;
 
           h3 {
-            margin: 15px 0;
+            margin: 15px 10px;
           }
 
+          .infoPart {
+            margin: 0 10px
+          }
+          .address p {
+            text-transform: uppercase;
+          }
           .contactIcons {
             width: 25px;
             display: inline-block;
@@ -142,7 +176,7 @@ body {
         }
       }
     }
-
+//Footer styles
     #footer {
       height: 100px;
       background-color: rgba(92,138,187,0.5);

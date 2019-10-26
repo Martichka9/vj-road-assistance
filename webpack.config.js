@@ -35,19 +35,21 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
                     loader: 'css-loader',
                     options: {
                       modules: true,
-                      sourceMap: isDevelopment
+                      sourceMap: isDevelopment,                      
+                      outputPath: 'styles/'
                     }
                 },
                 {
                     loader: 'sass-loader',
                     options: {
-                      sourceMap: isDevelopment
+                      sourceMap: isDevelopment,                      
+                      outputPath: 'styles/'
                     }
                 }
                 ]
             },
             {
-                test: /\.s(a|c)ss$/,
+                test: /\.scss$/,
                 exclude: /\.module.(s(a|c)ss)$/,
                 loader: [
                   isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
@@ -61,13 +63,35 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
                 ]
             },
             {
-              test: /\.(png|svg|jpg|gif)$/,
+              test: /\.(png|jpg|gif)$/,
               use: [{
                   loader: 'file-loader',
                   options: {
                     sourceMap: isDevelopment,
                     name: '[name].[ext]',
                     outputPath: 'imgs/'
+                  },
+                }],
+            },
+            {
+              test: /\.(eot|svg|woff|woff2|ttf)$/,
+              use: [{
+                  loader: 'file-loader',
+                  options: {
+                    sourceMap: isDevelopment,
+                    name: '[name].[ext]',
+                    outputPath: 'styles/fa-styles/'
+                  },
+                }],
+            },
+            {
+              test: /\.(css)$/,
+              use: [{
+                  loader: 'file-loader',
+                  options: {
+                    sourceMap: isDevelopment,
+                    name: '[name].[ext]',
+                    outputPath: 'styles/'
                   },
                 }],
             },
