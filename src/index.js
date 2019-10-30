@@ -30,15 +30,14 @@ export default function defFn (){
 
 document.addEventListener('readystatechange', (event) => {
     if (document.readyState === "complete") {
-        defFn();
+        var mobStyles = document.createElement('link');
+        mobStyles.type ="text/css"
+        mobStyles.rel = "stylesheet";
+        mobStyles.media = "only screen and (max-width: 828px)";
+        mobStyles.href = "./styles/ms-ss.css";
+        document.getElementsByTagName('head')[0].appendChild(mobStyles);
         
-    var mobStyles = document.createElement('link');
-    mobStyles.type ="text/css"
-    mobStyles.rel = "stylesheet";
-    mobStyles.media = "only screen and (max-width: 828px)";
-    mobStyles.href = "./styles/ms-ss.css";
-    document.getElementsByTagName('head')[0].appendChild(mobStyles);
-    
+        defFn();    
     }
 });
 
