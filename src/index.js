@@ -7,13 +7,6 @@ import "./styles/ms-ss.css";
 
 export default function defFn (){
     
-    var mobStyles = document.createElement('link');
-    mobStyles.type ="text/css"
-    mobStyles.rel = "stylesheet";
-    mobStyles.media = "only screen and (max-width: 828px)";
-    mobStyles.href = "./styles/ms-ss.css";
-    document.getElementsByTagName('head')[0].appendChild(mobStyles);
-    
     if (window.innerWidth < 828 || window.innerWidth < window.innerHeight) {
         document.getElementById('mainMenu').style.display = 'none';
         document.getElementsByClassName('fa-chevron-down')[0].style.display = "inline-block";
@@ -38,8 +31,17 @@ export default function defFn (){
 document.addEventListener('readystatechange', (event) => {
     if (document.readyState === "complete") {
         defFn();
+        
+    var mobStyles = document.createElement('link');
+    mobStyles.type ="text/css"
+    mobStyles.rel = "stylesheet";
+    mobStyles.media = "only screen and (max-width: 828px)";
+    mobStyles.href = "./styles/ms-ss.css";
+    document.getElementsByTagName('head')[0].appendChild(mobStyles);
+    
     }
 });
+
 
 window.addEventListener('resize',(ev) => {
     defFn();
