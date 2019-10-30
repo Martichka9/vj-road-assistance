@@ -25,7 +25,6 @@
     "start": "webpack-dev-server --open",
     "build": "webpack",
     "deploy": "gh-pages -d dist"
-
   },
   "repository": {
     "type": "git",

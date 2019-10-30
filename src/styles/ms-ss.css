@@ -1,0 +1,20 @@
+@media all and (max-width: 828px)  {
+    p, .menuItem {
+        font-size: 1.3em;
+    }
+    h2, h3 {
+        font-size: 1.5em;
+    }
+    #menuIcon i#down {
+        display: inline-block;
+    }
+
+    #mainMenu {
+        display: none;
+    }
+    
+    #main .contactInfo .contacts {
+        width: auto !important;
+        max-width: 450px;
+    }
+}

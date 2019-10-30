@@ -58,21 +58,17 @@ body {
             height: $fullLength;
           }
           i.fas {
-            display: inline-block;
+            display: none;
             height: 100%;
             position: absolute;
             top: 45px;
-          }
-          i.fa-chevron-down {display: none;
-          }
-          i.fa-chevron-right {display: none;
           }
         }
   
         #menuIcon:hover {
           cursor: pointer;
         }
-        #mainMenu {
+        .mainMenu {
           display: $displayFlex;
           list-style-type: none;
           flex-wrap: wrap;
@@ -183,10 +179,11 @@ body {
     }
 //Footer styles
     #footer {
-      height: 100px;
+      min-height: 100px;
       background-color: rgba(92,138,187,0.5);
       text-align: center;
-      line-height: 99px;
+      padding: 40px 25px;
+      box-sizing: border-box;
     }
   }  
 }
