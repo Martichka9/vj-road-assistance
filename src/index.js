@@ -2,48 +2,38 @@ import './styles/styles.scss';
 import "./styles/scss/fontawesome.scss";
 import "./styles/scss/solid.scss";
 import './imgs/needpix_com_edited_image.png';
-import * as Menu from "./scripts/menu.js";
-import "./styles/ms-ss.css";
 
 export default function defFn (){
-    
-    if (window.innerWidth < 828 || window.innerWidth < window.innerHeight) {
-        document.getElementById('mainMenu').style.display = 'none';
-        document.getElementsByClassName('fa-chevron-down')[0].style.display = "inline-block";
-
-        document.getElementById('menuIcon').addEventListener('click', ev => {
-            Menu.changeClass(ev.path[1]);
-        },false);
-        
-        document.getElementById('mainMenu').addEventListener('click', ev => {
-            Menu.changeClass(document.getElementById('menuIcon'));
-        })
-
-        window.addEventListener('click', ev => {
-            if (ev.clientY > 500 && document.getElementById('menuIcon').classList.contains('selectedM')) {
-                Menu.changeClass(document.getElementById('menuIcon'));   
-            }
-        })
-    }
-
+    let menu = menuIcon();
+    let outOfMenu = closeMenu();
 }
 
 document.addEventListener('readystatechange', (event) => {
     if (document.readyState === "complete") {
-        var mobStyles = document.createElement('link');
-        mobStyles.type ="text/css"
-        mobStyles.rel = "stylesheet";
-        mobStyles.media = "only screen and (max-width: 828px)";
-        mobStyles.href = "./styles/ms-ss.css";
-        document.getElementsByTagName('head')[0].appendChild(mobStyles);
-        
         defFn();    
     }
 });
 
+//opened and closed menu icons
+function menuIcon() {
+    document.getElementById('menu-btn').addEventListener('change', (e) => {
+        if (e.target.checked) {
+            console.log('checked')
+            document.getElementById('down').style.display = "none";
+            document.getElementById('right').style.display = "block";
+        } else {
+            console.log('unchecked')
+            document.getElementById('down').style.display = "block";
+            document.getElementById('right').style.display = "none";
+        }
+    });
+}
 
-window.addEventListener('resize',(ev) => {
-    defFn();
-});
-
-
+//close menu if clicked out of bounds
+function closeMenu() {
+    window.addEventListener('click', (e) => {
+        if (e.clientY > 100){
+            document.getElementById('menu-btn').click();
+        }
+    });
+}

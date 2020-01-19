@@ -28,12 +28,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Martichka9/vj-travel-assistance.git"
+    "url": "git+https://github.com/Martichka9/vj-road-assistance.git"
   },
   "author": "Martichka9",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Martichka9/vj-travel-assistance/issues"
+    "url": "https://github.com/Martichka9/vj-road-assistance/issues"
   },
-  "homepage": "https://github.com/Martichka9/vj-travel-assistance#readme"
+  "homepage": "https://github.com/Martichka9/vj-road-assistance#readme"
 }
