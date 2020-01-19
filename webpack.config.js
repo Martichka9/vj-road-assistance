@@ -11,7 +11,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
     },
     devtool: 'inline-source-map',
     devServer: {
-        contentBase: './dist',
+        contentBase: './docs',
     },
     plugins: [
       new CleanWebpackPlugin(),
@@ -102,7 +102,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
     },
     output: {
       filename: '[name].bundle.js',
-      path: path.resolve(__dirname, 'dist'),
+      path: path.resolve(__dirname, 'docs'),
       publicPath: "/vj-travel-assistance/"
     },
   };
