@@ -103,6 +103,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
     output: {
       filename: '[name].bundle.js',
       path: path.resolve(__dirname, 'docs'),
-      publicPath: "/vj-travel-assistance/"
+      publicPath: "/vj-road-assistance/"
     },
   };
